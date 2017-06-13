@@ -1,0 +1,8 @@
+<h2> Specific subcategory record </h2>
+<%= link_to "Edit",edit_sub_category_path(@subcategory.id) %> |
+
+<%= link_to "Destroy", sub_category_path(@subcategory.id), method: :delete , data: {confirm:"Are you sure"} %>
+<p>Name:<%= @subcategory.name %></p>
+<p>Category: <%= @subcategory.category.name %></p>
+
+<%= link_to "Back",sub_categories_path %>

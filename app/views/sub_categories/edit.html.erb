@@ -1,0 +1,17 @@
+<h2> Editing Existing Subcategory </h2>
+
+<%= form_for @subcategory do |f| %>
+<% if @subcategory.errors.any? %>
+<ol>
+   <% @subcategory.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+   <% end %>
+   </ol>
+<% end %>
+     <%= f.label :Name %>:
+     <%= f.text_field :name %><br/>
+     <%= f.label :Category %>
+     <%= f.collection_select :category_id,Category.all,:id,:name,prompt:"Select category" %><br/>
+     <%= f.submit %>
+<% end %>
+<%= link_to "Back",sub_category_path(@subcategory.id) %>

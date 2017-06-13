@@ -1,0 +1,14 @@
+<h2> Listing Sub_Category </h2>
+
+    <% if  @subcategories.empty? %>
+    <p>"No Record Found"</p>
+    <% else %>
+    <ol>
+        <% @subcategories.each do |subcategory| %>
+         <li> <%= link_to subcategory.name,sub_category_path(subcategory.id) %>-<%= subcategory.category.name %></li>
+
+        <% end %>
+    </ol>
+    <% end %>
+<%= link_to "New SubCategory",new_sub_category_path %>
+
